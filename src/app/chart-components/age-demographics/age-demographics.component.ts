@@ -36,6 +36,9 @@ export class AgeDemographics implements OnInit, DoCheck {
         formatter: this.getTooltipFormatter(),
         confine: true
       },
+      legend:{
+        show:true,
+      },
       series: [{
         name: 'Age Demographics',
         type: 'pie',
