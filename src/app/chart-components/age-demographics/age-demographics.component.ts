@@ -43,50 +43,23 @@ export class AgeDemographics implements OnInit, DoCheck {
         hoverOffset: 3,
         color: ['#facd07','#a988d8'],
         label: {
-          formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-          backgroundColor: '#eee',
-          borderColor: '#aaa',
-          borderWidth: 1,
-          borderRadius: 4,
-          // shadowBlur:3,
-          // shadowOffsetX: 2,
-          // shadowOffsetY: 2,
-          // shadowColor: '#999',
-          // padding: [0, 7],
+          formatter: '{per|{c}%}\n{b|{b}}',
           rich: {
-            a: {
-              color: '#999',
-              lineHeight: 22,
-              align: 'center'
-            },
-            abg: {
-              backgroundColor: '#333',
-              width: '100%',
-              align: 'right',
-              height: 22,
-              borderRadius: [4, 4, 0, 0]
-            },
-            hr: {
-              borderColor: '#aaa',
-              width: '100%',
-              borderWidth: 0.5,
-              height: 0
-            },
             b: {
-              fontSize: 16,
+              fontSize: 12,
               lineHeight: 33
             },
             per: {
-              color: '#eee',
-              backgroundColor: '#334455',
+              color: '#000',
+              backgroundColor: '#FFF',
               padding: [2, 4],
               borderRadius: 2
             }
           }
         },
         data: [
-          {value: 75, name: '25%'},
-          {value: 25, name: '75%'},
+          {value: 75, name: '50-70 Years Old'},
+          {value: 25, name: '30-50 Years Old'},
         ],
         emphasis: {
             itemStyle: {
