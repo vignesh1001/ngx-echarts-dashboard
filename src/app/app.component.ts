@@ -16,7 +16,7 @@ export class AppComponent implements OnInit, DoCheck {
 
   getTooltipFormatter() {
     return (params) => {
-      return '<div style="width:300px; height: 200px">working</div>'
+      return '<div style="width:200px; height: 100px">working</div>'
     };
   }
 
