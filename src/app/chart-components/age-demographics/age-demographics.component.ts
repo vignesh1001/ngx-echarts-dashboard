@@ -38,6 +38,7 @@ export class AgeDemographics implements OnInit, DoCheck {
       },
       legend:{
         show:true,
+        formatter: 'are {name}',
       },
       series: [{
         name: 'Age Demographics',
