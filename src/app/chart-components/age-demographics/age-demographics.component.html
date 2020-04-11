@@ -1,3 +1,10 @@
-<div id="chartGift" style="width: 100%; min-height: 400px">
-  <div echarts [options]="options"></div>
+<div id="ageDemographics">
+	<div echarts [options]="options"></div>
+	<div class="chart-legent">
+		<div *ngFor="let data of options.series[0].data; index as i;"
+			style="width:100%;display:flex;justify-content: center;">
+			<span style="font-size:20px;padding-right: 6px;" [style.color]="data.color" >{{data.value}}% </span>
+			<div style="padding-top: 2px;"> are {{data.name}} </div>
+		</div>
+	</div>
 </div>
