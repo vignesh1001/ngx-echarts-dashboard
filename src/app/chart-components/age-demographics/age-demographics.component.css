@@ -1,0 +1,8 @@
+#ageDemographics .chart-legent {
+  margin-top: -100px;
+}
+@media (max-width: 400px) {
+  #ageDemographics .chart-legent{
+    margin-top: -150px;
+  }
+}

@@ -1,17 +1,26 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
 
-import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { NgModule } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
-import { MatTooltipModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
+
+import { AgeDemographics } from './chart-components/age-demographics/age-demographics.component';
+import { AgeByDay } from './chart-components/age-by-day/age-by-day.component';
+import { GenderDemographics } from './chart-components/gender-demographics/gender-demographics.component';
+import { LocationDemographics } from './chart-components/location-demographics/location-demographics.component';
+
+
+
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, NgxEchartsModule, MatTooltipModule,
-  BrowserAnimationsModule ],
-  declarations: [ AppComponent, HelloComponent ],
-  bootstrap:    [ AppComponent ]
+  declarations: [
+    AppComponent, AgeDemographics,AgeByDay,GenderDemographics,LocationDemographics
+  ],
+  imports: [
+    BrowserModule, NgxEchartsModule, CommonModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
