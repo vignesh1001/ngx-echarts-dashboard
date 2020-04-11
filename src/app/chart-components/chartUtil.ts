@@ -18,7 +18,8 @@ return {
       },
       tooltip: {
         formatter: params => {
-          return '<div>'+params.name+' '+params.value+'</div>'
+          console.log(params);
+          return '<div><span style="color:'+params.color+';border-radius:40px;border:3px solid;"> </span>'+params.name+' '+params.value+'</div>'
         },
         confine: true
       },
