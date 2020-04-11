@@ -101,7 +101,7 @@ export class AgeByDay implements OnInit {
       yAxis: [{ gridIndex: 0, splitNumber: 3 }],
       grid: [{ top: "20%", bottom: "35%",left:'20%' }],
       series: [
-        { type: "bar", seriesLayoutBy: "row", color: "#a988d8" },
+        { type: "bar", seriesLayoutBy: "row", color: "#a988d8",barGap:'-10%'  },
         { type: "bar", seriesLayoutBy: "row", color: "#facd07" }
       ]
     };

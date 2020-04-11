@@ -18,7 +18,7 @@ return {
       },
       tooltip: {
         formatter: params => {
-          return '<div style="width:200px; height: 100px">working</div>'
+          return '<div>'+params.name+' '+params.value+'</div>'
         },
         confine: true
       },
