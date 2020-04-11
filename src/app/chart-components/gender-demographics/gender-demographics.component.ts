@@ -18,7 +18,9 @@ export class GenderDemographics implements OnInit, DoCheck {
       pieChartData:[
           {value: 45, name: 'Female'},
           {value: 55, name: 'Male'},
-        ],titleText:'Gender Demographics',seriesName:'Gender Demographics',
+        ],
+      titleText:'Gender Demographics',
+      seriesName:'Gender Demographics',
     });
     
     // {

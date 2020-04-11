@@ -2,13 +2,13 @@
 
 export const getDefaultPieChartOptions = (defaultOptions) => {
 
-const {pieChartData,dataColors=['#546570','#c23531','#37A2DA','#dd6b66','#293c55','#6e7074'],titleText='',seriesName=''} = defaultOptions;
-const dataClrs = [];
+const {pieChartData,pieChartColors=['#546570','#c23531','#37A2DA','#dd6b66','#293c55','#6e7074'],titleText='',seriesName=''} = defaultOptions;
+const chartColors = [];
 pieChartData.forEach((item,index)=>{
   if(!item.color) {
-    item.color = dataColors[index];
+    item.color = pieChartColors[index];
   }
-  dataClrs.push(item.color);
+  chartColors.push(item.color);
 });
 
 return {
@@ -47,7 +47,7 @@ return {
         center: ['50%', '40%'],
         radius: ['40%', '55%'],
         hoverOffset: 3,
-        color: dataClrs,
+        color: chartColors,
         labelLine: {
           length:1,
           length2:10,
