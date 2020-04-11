@@ -49,7 +49,7 @@ return {
         hoverOffset: 3,
         color: chartColors,
         labelLine: {
-          length:1,
+          length:10,
           length2:10,
           show:false,
         },
@@ -61,7 +61,7 @@ return {
               padding:[0,-10]
             },
             per: {
-              color: '#000',
+              fontWeight: 'bold',
               fontSize: 14,
               backgroundColor: '#FFF',
               borderRadius: 2,
