@@ -49,7 +49,7 @@ return {
         hoverOffset: 3,
         color: chartColors,
         labelLine: {
-          length:10,
+          length:8,
           length2:10,
           show:false,
         },
