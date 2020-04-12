@@ -1,4 +1,22 @@
-
+<div class="location-demographics">
+    <div class="title">Demographics by Location</div>
     <div id="locationChart" style="width: 100%; min-height: 400px">
       <div echarts [options]="options"></div>
-   </div>
+    </div>
+    <div class="chart-breakdown">
+        <div class="breakdown">Breakdown by County</div>
+        <div *ngFor="let data of locationDemographicData; index as i;">
+          <div class="county">
+              <p class="county-title">County</p>
+              <div class="confirmed-countyCases">
+                <p class="confirmed-countydata">Confirmed Cases</p>
+                <p class="confirmed-countyadd">{{data.confirmedCases}}</p>
+              </div>
+              <div class="suspected-countyCases">
+                <p class="confirmed-countydata">Suspected Cases</p>
+                <p class="confirmed-countyadd">{{data.suspectedCases}}</p>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

@@ -1,17 +1,11 @@
-<div align="center">
-	<div id="genderChart" style="width: 100%; min-height: 400px">
-		<div echarts [options]="options"></div>
-		<div class="chart-legent">
-			<table>
-				<tbody>
-					<tr *ngFor="let data of options.series[0].data; index as i;">
-						<td style="padding-right: 6px;font-size:20px;font-weight:bold;" [style.color]="data.color">
-							{{data.value}}%
-						</td>
-						<td style="padding-top: 2px;"> are {{data.name}} Cases</td>
-					</tr>
-				</tbody>
-			</table>
+<div class="gender-demographics">
+	<div class="title">Gender Demographics</div>
+	<div echarts [options]="options"></div>
+	<div class="chart-legent">
+		<div *ngFor="let data of options.series[0].data; index as i;"
+			style="width:100%;display:flex;justify-content: center;">
+			<span style="font-size:20px;padding-right: 6px;" [style.color]="data.color" >{{data.value}}% </span>
+			<div style="padding-top: 2px;"> are {{data.name}} Cases</div>
 		</div>
 	</div>
 </div>

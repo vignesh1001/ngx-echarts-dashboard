@@ -1,8 +1,15 @@
-#genderChart .chart-legent {
-  margin-top: -100px;
+.gender-demographics {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1px 6px #00000040;
+  border-radius: 6px;
+  opacity: 1;
+  padding: 4px;
 }
-@media (max-width: 400px) {
-  #genderChart .chart-legent{
-    margin-top: -150px;
-  }
+.title {
+  text-align: center;
+  text-decoration: underline;
+  font: normal 21px/32px Roboto;
+  letter-spacing: 0px;
+  color: #737373;
+  opacity: 1;
 }

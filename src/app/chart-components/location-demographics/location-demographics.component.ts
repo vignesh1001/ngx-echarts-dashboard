@@ -8,17 +8,24 @@ import { getDefaultPieChartOptions } from '../chartUtil';
 })
 export class LocationDemographics implements OnInit, DoCheck {
   options: any;
-
+  locationDemographicData = [];
+  constructor() {
+    this.locationDemographicData = [
+      {dataValue: 30, dataName: 'County 1',confirmedCases:'123',suspectedCases:'345'},
+      {dataValue: 35, dataName: 'County 2',confirmedCases:'123',suspectedCases:'345'},
+      {dataValue: 35, dataName: 'County 3',confirmedCases:'123',suspectedCases:'345'},
+    ]
+  }
   ngDoCheck(): void {
     console.log('doCheck');
   }
 
   ngOnInit() {
     this.options = getDefaultPieChartOptions({
-      pieChartData:[
-        {value: 30, name: 'County 1'},
-        {value: 35, name: 'County 2'},
-        {value: 35, name: 'County 3'},
+      pieChartData: [
+        { value: this.locationDemographicData[0].dataValue, name: this.locationDemographicData[0].dataName },
+        { value: this.locationDemographicData[1].dataValue, name: this.locationDemographicData[1].dataName },
+        { value: this.locationDemographicData[2].dataValue, name: this.locationDemographicData[2].dataName },
       ],
       pieChartColors:['#546570','#3fd7a4','#c23531'],
       titleText:'Demographics by Location',

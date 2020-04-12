@@ -9,13 +9,12 @@ import { AgeDemographics } from './chart-components/age-demographics/age-demogra
 import { AgeByDay } from './chart-components/age-by-day/age-by-day.component';
 import { GenderDemographics } from './chart-components/gender-demographics/gender-demographics.component';
 import { LocationDemographics } from './chart-components/location-demographics/location-demographics.component';
-
-
+import { ConfirmedCases } from './chart-components/confirmed-cases/confirmed-cases.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent, AgeDemographics,AgeByDay,GenderDemographics,LocationDemographics
+    AppComponent, AgeDemographics,AgeByDay,GenderDemographics,LocationDemographics,ConfirmedCases
   ],
   imports: [
     BrowserModule, NgxEchartsModule, CommonModule
