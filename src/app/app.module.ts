@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
+import { FormsModule }   from '@angular/forms';
 
 import { NgModule } from '@angular/core';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -17,7 +18,7 @@ import { ConfirmedCases } from './chart-components/confirmed-cases/confirmed-cas
     AppComponent, AgeDemographics,AgeByDay,GenderDemographics,LocationDemographics,ConfirmedCases
   ],
   imports: [
-    BrowserModule, NgxEchartsModule, CommonModule
+    BrowserModule, NgxEchartsModule, CommonModule,FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
