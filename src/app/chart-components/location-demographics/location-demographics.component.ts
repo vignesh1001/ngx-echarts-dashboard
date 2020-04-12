@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { getDefaultPieChartOptions } from '../chartUtil';
 
 @Component({
@@ -6,7 +6,7 @@ import { getDefaultPieChartOptions } from '../chartUtil';
   templateUrl: './location-demographics.component.html',
   styleUrls: ['./location-demographics.component.css']
 })
-export class LocationDemographics implements OnInit, DoCheck {
+export class LocationDemographics implements OnInit {
   options: any;
   locationDemographicData = [];
   constructor() {
@@ -15,9 +15,6 @@ export class LocationDemographics implements OnInit, DoCheck {
       {dataValue: 35, dataName: 'County 2',confirmedCases:'123',suspectedCases:'345'},
       {dataValue: 35, dataName: 'County 3',confirmedCases:'123',suspectedCases:'345'},
     ]
-  }
-  ngDoCheck(): void {
-    console.log('doCheck');
   }
 
   ngOnInit() {

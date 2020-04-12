@@ -10,8 +10,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     fetch(
-      "http://13.86.101.62:7005/api/covid19Data/cv19InfoByCountry?country=us"
-    ).then(res => {
+      "//13.86.101.62:7005/api/covid19Data/cv19InfoByCountry?country=us",{headers: {
+      'Content-Type': 'application/json',
+    }},
+    ).then((response) => {
+      return response.text();
+    })
+    .then(res => {
+      console.log(res);
       const clearTime = date => {
         date.setHours(0);
         date.setMinutes(0);
@@ -35,7 +41,7 @@ export class AppComponent implements OnInit {
           lat: Lat,
           lng: Long_
         };
-        
+
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: gMap,

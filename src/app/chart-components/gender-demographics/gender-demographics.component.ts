@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { getDefaultPieChartOptions } from '../chartUtil';
 
 @Component({
@@ -6,12 +6,8 @@ import { getDefaultPieChartOptions } from '../chartUtil';
   templateUrl: './gender-demographics.component.html',
   styleUrls: ['./gender-demographics.component.css']
 })
-export class GenderDemographics implements OnInit, DoCheck {
+export class GenderDemographics implements OnInit {
   options: any;
-
-  ngDoCheck(): void {
-    console.log('doCheck');
-  }
 
   ngOnInit() {
     this.options = getDefaultPieChartOptions({
