@@ -47,8 +47,18 @@ export class AppComponent implements OnInit {
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: gMap,
-          title: "Hello World!"
+          title: "Hello World!",
         });
+
+        google.maps.event.addListener(marker, 'click', (function(marker) {
+          return function(data) {
+            console.log(marker,data.latLng.lat(),data.latLng.lng());
+            const selectedInfo = mapList.find(
+                item=>item.Lat===data.latLng.lat() && 
+                item.Long_===data.latLng.lng());
+              
+          }
+        })(marker));
 
       });
     });
