@@ -81,7 +81,6 @@ export const getDefaultPieChartOptions = (defaultOptions) => {
               shadowColor: 'rgba(0, 0, 0, 0.5)'
             }
           },
-          height: '200px'
         }
       ]
     }
