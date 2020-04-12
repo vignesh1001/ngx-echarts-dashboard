@@ -32,31 +32,46 @@ export class AppComponent implements OnInit {
       var gMap = new google.maps.Map(document.getElementById("map"),{zoom:3});
       gMap.setCenter(new google.maps.LatLng(41.850033, -87.6500523));
 
+      var infoWindow = new google.maps.InfoWindow({
+        content: '',
+      });
+
       const mapList = res.filter(({ Last_Update }) => {
         const lastUpdateDate = new Date(Last_Update.substring(0, 10));
         clearTime(lastUpdateDate);
         return currentDate.getTime() === lastUpdateDate.getTime();
       });
       // {"FIPS":"31003","Admin2":"Antelope","Province_State":"Nebraska","Country_Region":"US","Last_Update":"2020-04-12T23:34:21.000Z","Lat":42.176955,"Long_":-98.066628,"Confirmed":1,"Deaths":0,"Recovered":0,"Active":0,"Combined_Key":"Antelope, Nebraska, US"},
-      mapList.forEach(({ Lat, Long_ }) => {
+      mapList.forEach(({ Lat, Long_,Admin2 }) => {
         var myLatLng = {
           lat: Lat,
           lng: Long_
         };
-
+        
         var marker = new google.maps.Marker({
           position: myLatLng,
           map: gMap,
-          title: "Hello World!",
+          title: Admin2,
         });
 
         google.maps.event.addListener(marker, 'click', (function(marker) {
-          return function(data) {
-            console.log(marker,data.latLng.lat(),data.latLng.lng());
+          return function() {
+            console.log(marker,marker.position.lat(),marker.position.lng());
             const selectedInfo = mapList.find(
-                item=>item.Lat===data.latLng.lat() && 
-                item.Long_===data.latLng.lng());
-              
+                item=>item.Lat===marker.position.lat() && 
+                item.Long_===marker.position.lng());
+            if(selectedInfo){
+              const htmlArr= ['<div>Covid20 - '+selectedInfo.Combined_Key+'</div>'];
+              htmlArr.push('<table width="60%">');
+              htmlArr.push('<tr><td style="font-size: 14px;font-weight: bold;">Active</td><td>'+selectedInfo.Active+'</td></tr>');
+              htmlArr.push('<tr><td style="font-size: 14px;font-weight: bold;">Confirmed</td><td>'+selectedInfo.Confirmed+'</td></tr>');
+              htmlArr.push('<tr><td style="font-size: 14px;font-weight: bold;">Deaths</td><td>'+selectedInfo.Deaths+'</td></tr>');
+              htmlArr.push('<tr><td style="font-size: 14px;font-weight: bold;">Recovered</td><td>'+selectedInfo.Recovered+'</td></tr>');
+              htmlArr.push('</table>');
+              infoWindow.setContent(htmlArr.join(''));
+              console.log(htmlArr.join());
+              infoWindow.open(gMap, marker);
+            }
           }
         })(marker));
 
