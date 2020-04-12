@@ -19,6 +19,8 @@ export const getDefaultPieChartOptions = (defaultOptions) => {
         //     fontStyle: 'normal'
         //   }
         // },
+        
+        grid: [{ top: "30%", bottom: "35%",left:'20%' , containLabel:true}],
         tooltip: {
           // formatter: params => {
           //   console.log(params);

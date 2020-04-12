@@ -16,15 +16,6 @@ export class AgeByDay implements OnInit {
 
   ngOnInit() {
     this.options = {
-      title: {
-        text: "Age By Day",
-        padding: [50, 0, 0, 20],
-        textStyle: {
-          color: "gray",
-          shadowBlur: 10,
-          fontWeight: "bold"
-        }
-      },
       legend: {
         x: "right",
         y: "left",
@@ -97,11 +88,14 @@ export class AgeByDay implements OnInit {
           ]
         ]
       },
-      xAxis: [{ type: "category", gridIndex: 0 }],
-      yAxis: [{ gridIndex: 0, splitNumber: 3 }],
+      xAxis: [{ type: "category", gridIndex: 0, axisLine:{ show : false} }],
+      yAxis: [{ gridIndex: 0, splitNumber: 3, axisLine:{ show : false} }],
       grid: [{ top: "30%", bottom: "35%",left:'20%' }],
+       
       series: [
-        { type: "bar", seriesLayoutBy: "row", color: "#a988d8",barGap:'-10%'  },
+        { type: "bar", seriesLayoutBy: "row", color: "#a988d8",barGap:'-10%',
+        markLine:{precision:0,lineStyle:{ opacity:0}}
+        },
         { type: "bar", seriesLayoutBy: "row", color: "#facd07" }
       ]
     };
